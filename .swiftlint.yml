@@ -1,0 +1,20 @@
+
+excluded:
+  - Pods/
+
+disabled_rules:
+  - todo
+  - nesting
+  - identifier_name
+  - cyclomatic_complexity
+
+line_length: 120
+
+type_name:
+  max_length: 60
+
+type_body_length: 500
+
+function_body_length: 120
+
+function_parameter_count: 6
