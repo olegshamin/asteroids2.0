@@ -12,6 +12,7 @@
 		8395BF61219F7CE700310ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8395BF60219F7CE700310ED1 /* Assets.xcassets */; };
 		8395BF6F219F7CE800310ED1 /* Asteroids2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF6E219F7CE800310ED1 /* Asteroids2_0Tests.swift */; };
 		8395BF7A219F7CE800310ED1 /* Asteroids2_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF79219F7CE800310ED1 /* Asteroids2_0UITests.swift */; };
+		8395BF8E219F816900310ED1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF8D219F816900310ED1 /* ViewController.swift */; };
 		A7BE15D9C163DC9A52A10152 /* Pods_Asteroids2_0Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA02BA7384A360AE9502171A /* Pods_Asteroids2_0Tests.framework */; };
 		DCEF81E45B8BC29208C4CB29 /* Pods_Asteroids2_0UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A0009D3523B9C7A1C32833 /* Pods_Asteroids2_0UITests.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		8395BF75219F7CE800310ED1 /* Asteroids2.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Asteroids2.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8395BF79219F7CE800310ED1 /* Asteroids2_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asteroids2_0UITests.swift; sourceTree = "<group>"; };
 		8395BF7B219F7CE800310ED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8395BF8D219F816900310ED1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		990B5862F0A9098790146DE4 /* Pods-Asteroids2.0Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids2.0Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids2.0Tests/Pods-Asteroids2.0Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A904E211BC96D844C6E81272 /* Pods-Asteroids2.0UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids2.0UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids2.0UITests/Pods-Asteroids2.0UITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA02BA7384A360AE9502171A /* Pods_Asteroids2_0Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asteroids2_0Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				8395BF87219F7E0500310ED1 /* Application */,
-				8395BF89219F7E1500310ED1 /* Presentation */,
+				8395BF8C219F814400310ED1 /* Presentation */,
 				8395BF88219F7E0D00310ED1 /* Resources */,
 				8395BF8A219F7E7D00310ED1 /* SupportingFiles */,
 			);
@@ -150,19 +152,20 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		8395BF89219F7E1500310ED1 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
 		8395BF8A219F7E7D00310ED1 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				8395BF65219F7CE700310ED1 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8395BF8C219F814400310ED1 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8395BF8D219F816900310ED1 /* ViewController.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		AC7051660D275B224F8EEEFE /* Frameworks */ = {
@@ -200,6 +203,7 @@
 				8395BF53219F7CE500310ED1 /* Frameworks */,
 				8395BF54219F7CE500310ED1 /* Resources */,
 				A877DC78A9C2E7CFF8071BBF /* [CP] Embed Pods Frameworks */,
+				8395BF8B219F805200310ED1 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -339,6 +343,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8395BF8B219F805200310ED1 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint --strict\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		A877DC78A9C2E7CFF8071BBF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8395BF8E219F816900310ED1 /* ViewController.swift in Sources */,
 				8395BF5A219F7CE500310ED1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,9 +594,10 @@
 			baseConfigurationReference = BBEC69F6E5B7D01238D9FD8F /* Pods-Asteroids2.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G548HJ9ST6;
-				INFOPLIST_FILE = Asteroids2.0/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Asteroids2.0/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -590,9 +614,10 @@
 			baseConfigurationReference = F087345583B16D340AF325A9 /* Pods-Asteroids2.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G548HJ9ST6;
-				INFOPLIST_FILE = Asteroids2.0/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Asteroids2.0/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
