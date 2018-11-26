@@ -1,0 +1,17 @@
+//
+//  Constants.swift
+//  Asteroids2.0
+//
+//  Created by Oleg Shamin on 17/11/2018.
+//  Copyright © 2018 Oleg Shamin. All rights reserved.
+//
+
+import Foundation
+
+extension TimeInterval {
+    static let requestTimeout: TimeInterval = 20
+}
+
+struct Constants {
+    static let baseURL = "https://api.nasa.gov/neo/rest"
+}

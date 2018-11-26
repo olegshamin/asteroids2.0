@@ -10,6 +10,7 @@ target 'Asteroids2.0' do
 	pod 'Alamofire', '~> 4.7'
 	pod 'SwiftyJSON'
 	pod 'SwiftLint'
+	pod 'RealmSwift'
 
   target 'Asteroids2.0Tests' do
     inherit! :search_paths

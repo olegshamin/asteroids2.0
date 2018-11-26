@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mS7-KR-mPK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="Tms-bp-1f8">
+            <objects>
+                <tabBarController id="mS7-KR-mPK" customClass="MainTabBarViewController" customModule="Asteroids2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LNk-fA-fbg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2dk-2K-ecX" kind="relationship" relationship="viewControllers" id="oYB-BW-SRH"/>
+                        <segue destination="4SI-ef-WUc" kind="relationship" relationship="viewControllers" id="rVF-Zc-wGH"/>
+                        <segue destination="eTO-Ct-oLc" kind="relationship" relationship="viewControllers" id="1qU-lE-fud"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AWH-Du-krN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-495" y="-142"/>
+        </scene>
+        <!--Asteroids-->
+        <scene sceneID="qDN-Hg-Svh">
+            <objects>
+                <navigationController id="2dk-2K-ecX" customClass="MainNavigationController" customModule="Asteroids2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Asteroids" id="Ou2-X4-dZE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AoN-tp-e4D">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iCc-xi-0pB" kind="relationship" relationship="rootViewController" id="5wD-tV-dnn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a3w-EV-Jiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="-837"/>
+        </scene>
+        <!--ListViewController-->
+        <scene sceneID="Eav-ki-6NV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ListViewController" id="iCc-xi-0pB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="x1W-oy-adM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AfO-Tx-mOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="-837"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="8Zz-We-vb4">
+            <objects>
+                <navigationController id="4SI-ef-WUc" customClass="MainNavigationController" customModule="Asteroids2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="pC6-Dn-Z6s"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ctY-3a-Y64">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JOX-93-7ij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="-143"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="FQK-MB-8Ki">
+            <objects>
+                <navigationController id="eTO-Ct-oLc" customClass="MainNavigationController" customModule="Asteroids2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="X2w-zI-B0F"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mGb-JO-Aoc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cLk-nX-sgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="561"/>
+        </scene>
+    </scenes>
+</document>
