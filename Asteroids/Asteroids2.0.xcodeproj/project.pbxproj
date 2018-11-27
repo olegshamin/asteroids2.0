@@ -91,6 +91,11 @@
 		83D2FC4021AB41D200B35FAD /* Date+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC3F21AB41D200B35FAD /* Date+Request.swift */; };
 		83D2FC4221AB423300B35FAD /* Date+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC4121AB423300B35FAD /* Date+Display.swift */; };
 		83D2FC4421AB433C00B35FAD /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC4321AB433C00B35FAD /* String+Date.swift */; };
+		83D2FC4D21ADD2A000B35FAD /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC4C21ADD2A000B35FAD /* Deserializer.swift */; };
+		83D2FC4F21ADD2C800B35FAD /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC4E21ADD2C800B35FAD /* JSONDeserializer.swift */; };
+		83D2FC5121ADD2E800B35FAD /* DeserializerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5021ADD2E800B35FAD /* DeserializerError.swift */; };
+		83D2FC5321ADD31500B35FAD /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5221ADD31500B35FAD /* Serializer.swift */; };
+		83D2FC5521ADD32C00B35FAD /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5421ADD32C00B35FAD /* JSONSerializer.swift */; };
 		A7BE15D9C163DC9A52A10152 /* Pods_Asteroids2_0Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA02BA7384A360AE9502171A /* Pods_Asteroids2_0Tests.framework */; };
 		DCEF81E45B8BC29208C4CB29 /* Pods_Asteroids2_0UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A0009D3523B9C7A1C32833 /* Pods_Asteroids2_0UITests.framework */; };
 /* End PBXBuildFile section */
@@ -205,6 +210,11 @@
 		83D2FC3F21AB41D200B35FAD /* Date+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Request.swift"; sourceTree = "<group>"; };
 		83D2FC4121AB423300B35FAD /* Date+Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Display.swift"; sourceTree = "<group>"; };
 		83D2FC4321AB433C00B35FAD /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		83D2FC4C21ADD2A000B35FAD /* Deserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deserializer.swift; sourceTree = "<group>"; };
+		83D2FC4E21ADD2C800B35FAD /* JSONDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDeserializer.swift; sourceTree = "<group>"; };
+		83D2FC5021ADD2E800B35FAD /* DeserializerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeserializerError.swift; sourceTree = "<group>"; };
+		83D2FC5221ADD31500B35FAD /* Serializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		83D2FC5421ADD32C00B35FAD /* JSONSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
 		990B5862F0A9098790146DE4 /* Pods-Asteroids2.0Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids2.0Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids2.0Tests/Pods-Asteroids2.0Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A904E211BC96D844C6E81272 /* Pods-Asteroids2.0UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids2.0UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids2.0UITests/Pods-Asteroids2.0UITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA02BA7384A360AE9502171A /* Pods_Asteroids2_0Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asteroids2_0Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -506,12 +516,14 @@
 			isa = PBXGroup;
 			children = (
 				83ABD3AD21A1734100FBF944 /* APIVersion */,
+				83D2FC4A21ADD27700B35FAD /* Deserializer */,
 				83ABD3BD21A1760400FBF944 /* Host */,
 				83ABD3B421A1747400FBF944 /* LocalStore */,
 				83ABD3A421A170E000FBF944 /* Model */,
 				83ABD39521A099EF00FBF944 /* Repository */,
 				83ABD38E21A097EB00FBF944 /* Request */,
 				83ABD37C21A094B100FBF944 /* Scheduler */,
+				83D2FC4B21ADD27F00B35FAD /* Serializer */,
 				83ABD37921A0948E00FBF944 /* Service */,
 				83ABD3A921A1728200FBF944 /* ServiceAssembly */,
 				83ABD38921A0966C00FBF944 /* Transport */,
@@ -548,6 +560,7 @@
 		83ABD38421A0959800FBF944 /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				83D2FC5021ADD2E800B35FAD /* DeserializerError.swift */,
 				83ABD38721A095E300FBF944 /* RepositoryError.swift */,
 				83ABD39A21A09C4000FBF944 /* RequestError.swift */,
 				83ABD38521A095C000FBF944 /* TransportError.swift */,
@@ -728,6 +741,24 @@
 				83ABD3D821A1B26800FBF944 /* AsteroidServiceAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		83D2FC4A21ADD27700B35FAD /* Deserializer */ = {
+			isa = PBXGroup;
+			children = (
+				83D2FC4C21ADD2A000B35FAD /* Deserializer.swift */,
+				83D2FC4E21ADD2C800B35FAD /* JSONDeserializer.swift */,
+			);
+			path = Deserializer;
+			sourceTree = "<group>";
+		};
+		83D2FC4B21ADD27F00B35FAD /* Serializer */ = {
+			isa = PBXGroup;
+			children = (
+				83D2FC5421ADD32C00B35FAD /* JSONSerializer.swift */,
+				83D2FC5221ADD31500B35FAD /* Serializer.swift */,
+			);
+			path = Serializer;
 			sourceTree = "<group>";
 		};
 		AC7051660D275B224F8EEEFE /* Frameworks */ = {
@@ -1016,6 +1047,7 @@
 				83ABD35021A07A2F00FBF944 /* SearchPresenter.swift in Sources */,
 				83ABD31121A03ABA00FBF944 /* UIView+AutoLayout.swift in Sources */,
 				83ABD35121A07A2F00FBF944 /* SearchAssembly.swift in Sources */,
+				83D2FC5321ADD31500B35FAD /* Serializer.swift in Sources */,
 				83ABD39721A09A0E00FBF944 /* Repository.swift in Sources */,
 				83ABD30D21A0386B00FBF944 /* Assembly.swift in Sources */,
 				83ABD3BA21A1752400FBF944 /* LocalStoreServiceAssembly.swift in Sources */,
@@ -1031,6 +1063,7 @@
 				83ABD3D721A1B25800FBF944 /* AsteroidsRequest.swift in Sources */,
 				83ABD36F21A07EA500FBF944 /* Configurable.swift in Sources */,
 				83ABD39F21A16DF900FBF944 /* ServerField.swift in Sources */,
+				83D2FC4D21ADD2A000B35FAD /* Deserializer.swift in Sources */,
 				83ABD32F21A06EF700FBF944 /* ListViewController.swift in Sources */,
 				83ABD38021A094E600FBF944 /* GCDScheduler.swift in Sources */,
 				83D2FC4221AB423300B35FAD /* Date+Display.swift in Sources */,
@@ -1040,6 +1073,7 @@
 				8395BF5A219F7CE500310ED1 /* AppDelegate.swift in Sources */,
 				83ABD38321A0952300FBF944 /* Result.swift in Sources */,
 				83ABD3C321A1763800FBF944 /* HostServiceAssembly.swift in Sources */,
+				83D2FC5521ADD32C00B35FAD /* JSONSerializer.swift in Sources */,
 				83ABD3D121A1B22A00FBF944 /* AsteroidNetworkRepository.swift in Sources */,
 				83ABD36221A07B0100FBF944 /* Settings.swift in Sources */,
 				83D2FC4021AB41D200B35FAD /* Date+Request.swift in Sources */,
@@ -1057,6 +1091,7 @@
 				83ABD37221A08D4F00FBF944 /* NibLoadable.swift in Sources */,
 				83ABD36521A07D4300FBF944 /* Collection+Optional.swift in Sources */,
 				83ABD36C21A07E0000FBF944 /* String+WhiteSpace.swift in Sources */,
+				83D2FC5121ADD2E800B35FAD /* DeserializerError.swift in Sources */,
 				83ABD39921A09AA300FBF944 /* NetworkRepository.swift in Sources */,
 				83ABD36A21A07DBD00FBF944 /* ErrorViewModel.swift in Sources */,
 				83ABD32D21A06ED000FBF944 /* ListAssembly.swift in Sources */,
@@ -1080,6 +1115,7 @@
 				83ABD39B21A09C4000FBF944 /* RequestError.swift in Sources */,
 				83ABD39421A0995C00FBF944 /* Constants.swift in Sources */,
 				83ABD38D21A097C300FBF944 /* TransportResponse.swift in Sources */,
+				83D2FC4F21ADD2C800B35FAD /* JSONDeserializer.swift in Sources */,
 				83ABD38621A095C000FBF944 /* TransportError.swift in Sources */,
 				83ABD3B321A1744600FBF944 /* StoreKey.swift in Sources */,
 			);

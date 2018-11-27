@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias ModelDictionary = [String: Any]
+
 extension TimeInterval {
     static let requestTimeout: TimeInterval = 20
 }
