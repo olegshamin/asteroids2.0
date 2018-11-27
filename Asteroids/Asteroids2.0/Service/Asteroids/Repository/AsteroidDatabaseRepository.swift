@@ -10,7 +10,7 @@ import Foundation
 
 final class AsteroidDatabaseRepository: AsteroidRepository, DatabaseRepository {
 
-    typealias DatabaseModel = Asteroid
+    typealias DatabaseModel = RealmAsteroid
     typealias PrimaryKey = String
 
     // MARK: AsteroidRepository

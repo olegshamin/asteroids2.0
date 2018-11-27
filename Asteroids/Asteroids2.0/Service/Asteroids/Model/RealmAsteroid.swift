@@ -1,40 +1,45 @@
 //
-//  Asteroid.swift
+//  RealmAsteroid.swift
 //  Asteroids2.0
 //
-//  Created by Oleg Shamin on 18/11/2018.
+//  Created by Oleg Shamin on 27/11/2018.
 //  Copyright © 2018 Oleg Shamin. All rights reserved.
 //
 
 import Foundation
+import RealmSwift
 
-struct Asteroid {
+final class RealmAsteroid: Object {
 
     // MARK: Properties
 
-    let id: String
-    let name: String
-    let diameterKmMin: Double
-    let diameterKmMax: Double
-    let diameterMMin: Double
-    let diameterMMax: Double
-    let diameterMiMin: Double
-    let diameterMiMax: Double
-    let diameterFMin: Double
-    let diameterFMax: Double
-    let isItDangerous: Bool
-    let velocityKms: String
-    let velocityKmh: String
-    let velocityMph: String
-    let distanceAstronomical: String
-    let distanceLunar: String
-    let distanceKm: String
-    let distanceMi: String
-    let orbitalData: RealmOrbitalData
+    @objc dynamic var id: String = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var diameterKmMin: Double = -1
+    @objc dynamic var diameterKmMax: Double = -1
+    @objc dynamic var diameterMMin: Double = -1
+    @objc dynamic var diameterMMax: Double = -1
+    @objc dynamic var diameterMiMin: Double = -1
+    @objc dynamic var diameterMiMax: Double = -1
+    @objc dynamic var diameterFMin: Double = -1
+    @objc dynamic var diameterFMax: Double = -1
+    @objc dynamic var isItDangerous: Bool = false
+    @objc dynamic var velocityKms: String = ""
+    @objc dynamic var velocityKmh: String = ""
+    @objc dynamic var velocityMph: String = ""
+    @objc dynamic var distanceAstronomical: String = ""
+    @objc dynamic var distanceLunar: String = ""
+    @objc dynamic var distanceKm: String = ""
+    @objc dynamic var distanceMi: String = ""
+    @objc dynamic var orbitalData: RealmOrbitalData?
+
+    override static func primaryKey() -> String? {
+        return #keyPath(RealmAsteroid.id)
+    }
 
     // MARK: Initialization
 
-    init(
+    convenience init(
         id: String,
         name: String,
         diameterKmMin: Double,
@@ -53,8 +58,9 @@ struct Asteroid {
         distanceLunar: String,
         distanceKm: String,
         distanceMi: String,
-        orbitalData: RealmOrbitalData
+        orbitalData: RealmOrbitalData?
         ) {
+        self.init()
         self.id = id
         self.name = name
         self.diameterKmMin = diameterKmMin
@@ -75,10 +81,10 @@ struct Asteroid {
         self.distanceMi = distanceMi
         self.orbitalData = orbitalData
     }
-}
 
-extension Asteroid: Equatable {
-    static func == (lhs: Asteroid, rhs: Asteroid) -> Bool {
+    // MARK: Equatable
+
+    static func == (lhs: RealmAsteroid, rhs: RealmAsteroid) -> Bool {
         return lhs.id == rhs.id
     }
 }

@@ -96,6 +96,11 @@
 		83D2FC5121ADD2E800B35FAD /* DeserializerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5021ADD2E800B35FAD /* DeserializerError.swift */; };
 		83D2FC5321ADD31500B35FAD /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5221ADD31500B35FAD /* Serializer.swift */; };
 		83D2FC5521ADD32C00B35FAD /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5421ADD32C00B35FAD /* JSONSerializer.swift */; };
+		83D2FC5721ADD5CE00B35FAD /* RealmAsteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5621ADD5CE00B35FAD /* RealmAsteroid.swift */; };
+		83D2FC5921ADE8D500B35FAD /* RealmOrbitalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5821ADE8D500B35FAD /* RealmOrbitalData.swift */; };
+		83D2FC5B21ADEC2200B35FAD /* RealmOrbitClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5A21ADEC2200B35FAD /* RealmOrbitClass.swift */; };
+		83D2FC5D21ADF61300B35FAD /* OrbitalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5C21ADF61300B35FAD /* OrbitalData.swift */; };
+		83D2FC5F21ADF62100B35FAD /* OrbitClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2FC5E21ADF62100B35FAD /* OrbitClass.swift */; };
 		A7BE15D9C163DC9A52A10152 /* Pods_Asteroids2_0Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA02BA7384A360AE9502171A /* Pods_Asteroids2_0Tests.framework */; };
 		DCEF81E45B8BC29208C4CB29 /* Pods_Asteroids2_0UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A0009D3523B9C7A1C32833 /* Pods_Asteroids2_0UITests.framework */; };
 /* End PBXBuildFile section */
@@ -215,6 +220,11 @@
 		83D2FC5021ADD2E800B35FAD /* DeserializerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeserializerError.swift; sourceTree = "<group>"; };
 		83D2FC5221ADD31500B35FAD /* Serializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		83D2FC5421ADD32C00B35FAD /* JSONSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
+		83D2FC5621ADD5CE00B35FAD /* RealmAsteroid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAsteroid.swift; sourceTree = "<group>"; };
+		83D2FC5821ADE8D500B35FAD /* RealmOrbitalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmOrbitalData.swift; sourceTree = "<group>"; };
+		83D2FC5A21ADEC2200B35FAD /* RealmOrbitClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmOrbitClass.swift; sourceTree = "<group>"; };
+		83D2FC5C21ADF61300B35FAD /* OrbitalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitalData.swift; sourceTree = "<group>"; };
+		83D2FC5E21ADF62100B35FAD /* OrbitClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitClass.swift; sourceTree = "<group>"; };
 		990B5862F0A9098790146DE4 /* Pods-Asteroids2.0Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids2.0Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids2.0Tests/Pods-Asteroids2.0Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A904E211BC96D844C6E81272 /* Pods-Asteroids2.0UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids2.0UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids2.0UITests/Pods-Asteroids2.0UITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA02BA7384A360AE9502171A /* Pods_Asteroids2_0Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asteroids2_0Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -731,6 +741,11 @@
 			isa = PBXGroup;
 			children = (
 				83ABD3CC21A1B11F00FBF944 /* Asteroid.swift */,
+				83D2FC5C21ADF61300B35FAD /* OrbitalData.swift */,
+				83D2FC5E21ADF62100B35FAD /* OrbitClass.swift */,
+				83D2FC5621ADD5CE00B35FAD /* RealmAsteroid.swift */,
+				83D2FC5821ADE8D500B35FAD /* RealmOrbitalData.swift */,
+				83D2FC5A21ADEC2200B35FAD /* RealmOrbitClass.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1079,6 +1094,7 @@
 				83D2FC4021AB41D200B35FAD /* Date+Request.swift in Sources */,
 				83ABD3B121A1736100FBF944 /* APIVersionService.swift in Sources */,
 				83ABD31621A03CC000FBF944 /* MainTabBarViewController.swift in Sources */,
+				83D2FC5921ADE8D500B35FAD /* RealmOrbitalData.swift in Sources */,
 				83ABD39D21A0AC8500FBF944 /* DatabaseRepository.swift in Sources */,
 				83D2FC4421AB433C00B35FAD /* String+Date.swift in Sources */,
 				83ABD35F21A07B0100FBF944 /* SettingsAssembly.swift in Sources */,
@@ -1091,6 +1107,7 @@
 				83ABD37221A08D4F00FBF944 /* NibLoadable.swift in Sources */,
 				83ABD36521A07D4300FBF944 /* Collection+Optional.swift in Sources */,
 				83ABD36C21A07E0000FBF944 /* String+WhiteSpace.swift in Sources */,
+				83D2FC5B21ADEC2200B35FAD /* RealmOrbitClass.swift in Sources */,
 				83D2FC5121ADD2E800B35FAD /* DeserializerError.swift in Sources */,
 				83ABD39921A09AA300FBF944 /* NetworkRepository.swift in Sources */,
 				83ABD36A21A07DBD00FBF944 /* ErrorViewModel.swift in Sources */,
@@ -1115,9 +1132,12 @@
 				83ABD39B21A09C4000FBF944 /* RequestError.swift in Sources */,
 				83ABD39421A0995C00FBF944 /* Constants.swift in Sources */,
 				83ABD38D21A097C300FBF944 /* TransportResponse.swift in Sources */,
+				83D2FC5F21ADF62100B35FAD /* OrbitClass.swift in Sources */,
 				83D2FC4F21ADD2C800B35FAD /* JSONDeserializer.swift in Sources */,
 				83ABD38621A095C000FBF944 /* TransportError.swift in Sources */,
 				83ABD3B321A1744600FBF944 /* StoreKey.swift in Sources */,
+				83D2FC5721ADD5CE00B35FAD /* RealmAsteroid.swift in Sources */,
+				83D2FC5D21ADF61300B35FAD /* OrbitalData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
