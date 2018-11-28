@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3379C0345D172DCC23E13F8C /* Pods_Asteroids2_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C1C8A5372B290D80A6F3FB /* Pods_Asteroids2_0.framework */; };
+		8360E1ED21AF2017003BBA69 /* AsteroidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1EC21AF2017003BBA69 /* AsteroidViewModel.swift */; };
 		8395BF5A219F7CE500310ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF59219F7CE500310ED1 /* AppDelegate.swift */; };
 		8395BF61219F7CE700310ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8395BF60219F7CE700310ED1 /* Assets.xcassets */; };
 		8395BF6F219F7CE800310ED1 /* Asteroids2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF6E219F7CE800310ED1 /* Asteroids2_0Tests.swift */; };
@@ -126,6 +127,7 @@
 		11A0009D3523B9C7A1C32833 /* Pods_Asteroids2_0UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asteroids2_0UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49641F0EB52046DE324C8614 /* Pods-Asteroids2.0Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids2.0Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids2.0Tests/Pods-Asteroids2.0Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8176C0DB9DFBEEEA12A9E634 /* Pods-Asteroids2.0UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids2.0UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids2.0UITests/Pods-Asteroids2.0UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8360E1EC21AF2017003BBA69 /* AsteroidViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidViewModel.swift; sourceTree = "<group>"; };
 		8395BF56219F7CE500310ED1 /* Asteroids2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8395BF59219F7CE500310ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8395BF60219F7CE700310ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 		83ABD36821A07DAB00FBF944 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8360E1EC21AF2017003BBA69 /* AsteroidViewModel.swift */,
 				83ABD36921A07DBD00FBF944 /* ErrorViewModel.swift */,
 			);
 			path = ViewModel;
@@ -1060,6 +1063,7 @@
 				83ABD3C121A1762400FBF944 /* HostService.swift in Sources */,
 				83ABD3DB21A1B2A500FBF944 /* AsteroidServiceImpl.swift in Sources */,
 				83ABD35021A07A2F00FBF944 /* SearchPresenter.swift in Sources */,
+				8360E1ED21AF2017003BBA69 /* AsteroidViewModel.swift in Sources */,
 				83ABD31121A03ABA00FBF944 /* UIView+AutoLayout.swift in Sources */,
 				83ABD35121A07A2F00FBF944 /* SearchAssembly.swift in Sources */,
 				83D2FC5321ADD31500B35FAD /* Serializer.swift in Sources */,

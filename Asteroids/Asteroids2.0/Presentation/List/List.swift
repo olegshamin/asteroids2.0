@@ -11,7 +11,17 @@ import Foundation
 enum List {
     enum Asteroids {
         struct Request {}
-        struct Response {}
-        struct ViewModel {}
+        struct Response {
+            var asteroids: [Asteroid]?
+            let error: Error?
+        }
+        struct ViewModel {
+            struct Success {
+                let asteroidsViewModel: [AsteroidViewModel]
+            }
+            struct Failure {
+                let errorViewModel: ErrorViewModel
+            }
+        }
     }
 }
