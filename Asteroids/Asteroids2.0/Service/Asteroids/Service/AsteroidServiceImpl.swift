@@ -30,6 +30,12 @@ final class AsteroidServiceImpl: AsteroidService {
 
     // MARK: AsteroidService
 
-    func asteroids(completion: @escaping AsteroidsResultHandler) {
+    func asteroids(with request: AsteroidsRequest,
+                   completion: @escaping AsteroidsResultHandler) {
+        self.scheduler.doInBg { [weak self] in
+            self?.networkRepository.asteroids(with: request, completion: { result in
+                print("")
+            })
+        }
     }
 }

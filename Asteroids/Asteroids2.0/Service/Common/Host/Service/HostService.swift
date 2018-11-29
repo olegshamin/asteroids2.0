@@ -32,7 +32,7 @@ final class HostServiceImpl: HostService {
 
     func host() -> String {
         guard let host = localStoreService.value(for: .host) else {
-            return Constants.baseURL
+            return URLString.host
         }
         return host
     }

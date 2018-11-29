@@ -14,6 +14,7 @@ struct Asteroid {
 
     let id: String
     let name: String
+    let date: Date
     let diameterKmMin: Double
     let diameterKmMax: Double
     let diameterMMin: Double
@@ -30,13 +31,14 @@ struct Asteroid {
     let distanceLunar: String
     let distanceKm: String
     let distanceMi: String
-    let orbitalData: RealmOrbitalData
+    let orbitalData: OrbitalData
 
     // MARK: Initialization
 
     init(
         id: String,
         name: String,
+        date: Date,
         diameterKmMin: Double,
         diameterKmMax: Double,
         diameterMMin: Double,
@@ -53,10 +55,11 @@ struct Asteroid {
         distanceLunar: String,
         distanceKm: String,
         distanceMi: String,
-        orbitalData: RealmOrbitalData
+        orbitalData: OrbitalData
         ) {
         self.id = id
         self.name = name
+        self.date = date
         self.diameterKmMin = diameterKmMin
         self.diameterKmMax = diameterKmMax
         self.diameterMMin = diameterMMin

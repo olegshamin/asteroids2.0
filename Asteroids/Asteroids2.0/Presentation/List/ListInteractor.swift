@@ -36,7 +36,9 @@ final class ListInteractor: ListBusinessLogic, ListDataStore {
     // MARK: ListBusinessLogic
 
     func asteroids(request: List.Asteroids.Request) {
-        asteroidService.asteroids { [weak self] result in
+        let request = AsteroidsRequest(startDate: Date(), endDate: Date())
+        asteroidService.asteroids(with: request) { [weak self] result in
+            print("")
         }
     }
 }

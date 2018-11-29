@@ -15,5 +15,5 @@ extension TimeInterval {
 }
 
 struct Constants {
-    static let baseURL = "https://api.nasa.gov/neo/rest"
+    static let apiKey = "DEMO_KEY"
 }

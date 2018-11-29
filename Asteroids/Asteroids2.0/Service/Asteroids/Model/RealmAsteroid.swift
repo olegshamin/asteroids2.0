@@ -15,6 +15,7 @@ final class RealmAsteroid: Object {
 
     @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""
+    @objc dynamic var date: Date = Date()
     @objc dynamic var diameterKmMin: Double = -1
     @objc dynamic var diameterKmMax: Double = -1
     @objc dynamic var diameterMMin: Double = -1
@@ -42,6 +43,7 @@ final class RealmAsteroid: Object {
     convenience init(
         id: String,
         name: String,
+        date: Date,
         diameterKmMin: Double,
         diameterKmMax: Double,
         diameterMMin: Double,
@@ -63,6 +65,7 @@ final class RealmAsteroid: Object {
         self.init()
         self.id = id
         self.name = name
+        self.date = date
         self.diameterKmMin = diameterKmMin
         self.diameterKmMax = diameterKmMax
         self.diameterMMin = diameterMMin

@@ -10,7 +10,33 @@ import Foundation
 
 struct AsteroidsRequest: Request {
 
+    // MARK: Properties
+
+    let startDate: String
+    let endDate: String
+
+    // MARK: Initialization
+
+    init(
+        startDate: Date,
+        endDate: Date
+        ) {
+        self.startDate = startDate.convertToRequest()
+        self.endDate = endDate.convertToRequest()
+    }
+
+    // MARK: Request
+
     var path: String {
-        return ""
+        return URLString.feed
+    }
+
+    var parameters: [String: Any] {
+        return [
+            ServerField.start_date: startDate,
+            ServerField.end_date: endDate,
+            ServerField.detailed: true,
+            ServerField.api_key: Constants.apiKey
+        ]
     }
 }

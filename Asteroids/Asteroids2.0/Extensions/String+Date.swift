@@ -18,4 +18,13 @@ extension String {
         formatter.dateStyle = .medium
         return formatter.string(from: date)
     }
+
+    func convertFromServerFormatToDate() -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        guard let date = formatter.date(from: self) else {
+            return Date()
+        }
+        return date
+    }
 }

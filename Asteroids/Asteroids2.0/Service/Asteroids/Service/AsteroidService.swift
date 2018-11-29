@@ -12,5 +12,6 @@ typealias AsteroidsResult = Result<[Asteroid]>
 typealias AsteroidsResultHandler = (AsteroidsResult) -> Void
 
 protocol AsteroidService: Service {
-    func asteroids(completion: @escaping AsteroidsResultHandler)
+    func asteroids(with request: AsteroidsRequest,
+                   completion: @escaping AsteroidsResultHandler)
 }

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setupEnvironment() {
-        ServiceFactory.shared.hostService.setHost(Constants.baseURL)
+        ServiceFactory.shared.hostService.setHost(URLString.host)
         ServiceFactory.shared.apiVersionService.setApiVersionNumber(1)
     }
 

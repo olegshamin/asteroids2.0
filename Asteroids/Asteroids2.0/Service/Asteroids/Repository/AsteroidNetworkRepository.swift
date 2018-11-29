@@ -13,17 +13,64 @@ final class AsteroidNetworkRepository: AsteroidRepository, NetworkRepository {
     // MARK: NetworkRepository
 
     let transport: Transport
+    private let deserializer: Deserializer
+    private let networkMapper: AsteroidNetworkMapper
 
     // MARK: Initialization
 
     init(
-        transport: Transport
+        transport: Transport,
+        deserializer: Deserializer,
+        networkMapper: AsteroidNetworkMapper
         ) {
         self.transport = transport
+        self.deserializer = deserializer
+        self.networkMapper = networkMapper
     }
 
     // MARK: AsteroidRepository
 
-    func asteroids(with request: AsteroidsRequest, completion: @escaping AsteroidsResultHandler) {
+    func asteroids(with request: AsteroidsRequest,
+                   completion: @escaping AsteroidsResultHandler) {
+        transport.perform(request: request) { [weak self] result in
+            self?.handle(asteroidsResult: result, completion: completion)
+        }
+    }
+
+    // MARK: Private helpers
+
+    private func handle(
+        asteroidsResult result: TransportResponseResult,
+        completion: @escaping AsteroidsResultHandler
+        ) {
+        handle(transportResponseResult: result, completion: completion) { data in
+            let result = Result(attempt: { try parseAsteroids(data: data) })
+            handle(result: result, completion: completion)
+        }
+    }
+
+    // MARK: Parsing helpers
+
+    private func parseAsteroids(
+        data: Data
+        ) throws -> [Asteroid] {
+        var result: [Asteroid] = []
+        let responseDictionary = try deserializer.deserialize(data: data)
+//        let categoryDictionaries: [ModelDictionary] = try responseDictionary.mapField(withKey: ServerField.items)
+//        let communicationCategories = try categoryDictionaries.map(communicationCategoryNetworkMapper.map)
+//        let paginationInfoDictionary: ModelDictionary = try responseDictionary.mapField(withKey: ServerField._meta)
+//        let paginationInfo = try paginationInfoNetworkMapper.map(paginationInfoDictionary)
+//        return ECOPaginatedResponse(response: communicationCategories, paginationInfo: paginationInfo)
+        let daysDictionary: ModelDictionary = try responseDictionary.mapField(withKey: ServerField.near_earth_objects)
+
+        for (_, asteroids) in daysDictionary {
+            guard let asteroids = asteroids as? [ModelDictionary] else {
+                return result
+            }
+            let models = try asteroids.map(networkMapper.map)
+            result.append(contentsOf: models)
+        }
+
+        return result
     }
 }

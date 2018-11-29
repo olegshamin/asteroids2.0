@@ -29,4 +29,8 @@ class ServiceAssembly {
     func transport() -> Transport {
         return AlamofireTransport()
     }
+
+    func deserializer() -> Deserializer {
+        return JSONDeserializer()
+    }
 }

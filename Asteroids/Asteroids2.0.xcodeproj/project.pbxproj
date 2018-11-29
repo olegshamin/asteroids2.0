@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3379C0345D172DCC23E13F8C /* Pods_Asteroids2_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C1C8A5372B290D80A6F3FB /* Pods_Asteroids2_0.framework */; };
 		8360E1ED21AF2017003BBA69 /* AsteroidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1EC21AF2017003BBA69 /* AsteroidViewModel.swift */; };
+		8360E1EF21B087B1003BBA69 /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1EE21B087B1003BBA69 /* URLString.swift */; };
+		8360E1F121B08DC8003BBA69 /* Dictionary+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1F021B08DC8003BBA69 /* Dictionary+Mapping.swift */; };
+		8360E1F321B08DF2003BBA69 /* MapperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1F221B08DF2003BBA69 /* MapperError.swift */; };
+		8360E1F621B0965D003BBA69 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1F521B0965D003BBA69 /* Mapper.swift */; };
+		8360E1F921B096DA003BBA69 /* AsteroidNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1F821B096DA003BBA69 /* AsteroidNetworkMapper.swift */; };
 		8395BF5A219F7CE500310ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF59219F7CE500310ED1 /* AppDelegate.swift */; };
 		8395BF61219F7CE700310ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8395BF60219F7CE700310ED1 /* Assets.xcassets */; };
 		8395BF6F219F7CE800310ED1 /* Asteroids2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF6E219F7CE800310ED1 /* Asteroids2_0Tests.swift */; };
@@ -128,6 +133,11 @@
 		49641F0EB52046DE324C8614 /* Pods-Asteroids2.0Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids2.0Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids2.0Tests/Pods-Asteroids2.0Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8176C0DB9DFBEEEA12A9E634 /* Pods-Asteroids2.0UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids2.0UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids2.0UITests/Pods-Asteroids2.0UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8360E1EC21AF2017003BBA69 /* AsteroidViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidViewModel.swift; sourceTree = "<group>"; };
+		8360E1EE21B087B1003BBA69 /* URLString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
+		8360E1F021B08DC8003BBA69 /* Dictionary+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Mapping.swift"; sourceTree = "<group>"; };
+		8360E1F221B08DF2003BBA69 /* MapperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperError.swift; sourceTree = "<group>"; };
+		8360E1F521B0965D003BBA69 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		8360E1F821B096DA003BBA69 /* AsteroidNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidNetworkMapper.swift; sourceTree = "<group>"; };
 		8395BF56219F7CE500310ED1 /* Asteroids2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8395BF59219F7CE500310ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8395BF60219F7CE700310ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -263,6 +273,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8360E1F421B09648003BBA69 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				8360E1F521B0965D003BBA69 /* Mapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		8360E1F721B096B2003BBA69 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				8360E1F821B096DA003BBA69 /* AsteroidNetworkMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
 		8395BF4D219F7CE500310ED1 = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +407,7 @@
 				83ABD36421A07D4300FBF944 /* Collection+Optional.swift */,
 				83D2FC4121AB423300B35FAD /* Date+Display.swift */,
 				83D2FC3F21AB41D200B35FAD /* Date+Request.swift */,
+				8360E1F021B08DC8003BBA69 /* Dictionary+Mapping.swift */,
 				83ABD30E21A03A6600FBF944 /* Notification+KeyboardHeight.swift */,
 				83D2FC4321AB433C00B35FAD /* String+Date.swift */,
 				83ABD36B21A07E0000FBF944 /* String+WhiteSpace.swift */,
@@ -532,6 +559,7 @@
 				83D2FC4A21ADD27700B35FAD /* Deserializer */,
 				83ABD3BD21A1760400FBF944 /* Host */,
 				83ABD3B421A1747400FBF944 /* LocalStore */,
+				8360E1F421B09648003BBA69 /* Mapper */,
 				83ABD3A421A170E000FBF944 /* Model */,
 				83ABD39521A099EF00FBF944 /* Repository */,
 				83ABD38E21A097EB00FBF944 /* Request */,
@@ -566,6 +594,7 @@
 			children = (
 				83ABD38221A0952300FBF944 /* Result.swift */,
 				83ABD39E21A16DF900FBF944 /* ServerField.swift */,
+				8360E1EE21B087B1003BBA69 /* URLString.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -574,6 +603,7 @@
 			isa = PBXGroup;
 			children = (
 				83D2FC5021ADD2E800B35FAD /* DeserializerError.swift */,
+				8360E1F221B08DF2003BBA69 /* MapperError.swift */,
 				83ABD38721A095E300FBF944 /* RepositoryError.swift */,
 				83ABD39A21A09C4000FBF944 /* RequestError.swift */,
 				83ABD38521A095C000FBF944 /* TransportError.swift */,
@@ -705,6 +735,7 @@
 			isa = PBXGroup;
 			children = (
 				83ABD3CB21A1B10C00FBF944 /* Assembly */,
+				8360E1F721B096B2003BBA69 /* Mapper */,
 				83ABD3CA21A1B10600FBF944 /* Model */,
 				83ABD3C921A1B10000FBF944 /* Repository */,
 				83ABD3C821A1B0FC00FBF944 /* Request */,
@@ -1060,6 +1091,7 @@
 				83ABD35D21A07B0100FBF944 /* SettingsRouter.swift in Sources */,
 				83ABD30F21A03A6600FBF944 /* Notification+KeyboardHeight.swift in Sources */,
 				83ABD39021A097FD00FBF944 /* Request.swift in Sources */,
+				8360E1F621B0965D003BBA69 /* Mapper.swift in Sources */,
 				83ABD3C121A1762400FBF944 /* HostService.swift in Sources */,
 				83ABD3DB21A1B2A500FBF944 /* AsteroidServiceImpl.swift in Sources */,
 				83ABD35021A07A2F00FBF944 /* SearchPresenter.swift in Sources */,
@@ -1093,6 +1125,7 @@
 				83ABD38321A0952300FBF944 /* Result.swift in Sources */,
 				83ABD3C321A1763800FBF944 /* HostServiceAssembly.swift in Sources */,
 				83D2FC5521ADD32C00B35FAD /* JSONSerializer.swift in Sources */,
+				8360E1F921B096DA003BBA69 /* AsteroidNetworkMapper.swift in Sources */,
 				83ABD3D121A1B22A00FBF944 /* AsteroidNetworkRepository.swift in Sources */,
 				83ABD36221A07B0100FBF944 /* Settings.swift in Sources */,
 				83D2FC4021AB41D200B35FAD /* Date+Request.swift in Sources */,
@@ -1109,6 +1142,7 @@
 				83ABD38821A095E300FBF944 /* RepositoryError.swift in Sources */,
 				83ABD3CD21A1B11F00FBF944 /* Asteroid.swift in Sources */,
 				83ABD37221A08D4F00FBF944 /* NibLoadable.swift in Sources */,
+				8360E1F321B08DF2003BBA69 /* MapperError.swift in Sources */,
 				83ABD36521A07D4300FBF944 /* Collection+Optional.swift in Sources */,
 				83ABD36C21A07E0000FBF944 /* String+WhiteSpace.swift in Sources */,
 				83D2FC5B21ADEC2200B35FAD /* RealmOrbitClass.swift in Sources */,
@@ -1125,8 +1159,10 @@
 				83ABD37E21A094C500FBF944 /* Scheduler.swift in Sources */,
 				83ABD38B21A0968200FBF944 /* Transport.swift in Sources */,
 				83ABD3B821A1749800FBF944 /* LocalStoreService.swift in Sources */,
+				8360E1EF21B087B1003BBA69 /* URLString.swift in Sources */,
 				83ABD36321A07B0100FBF944 /* SettingsInteractor.swift in Sources */,
 				83ABD2FD21A036E900FBF944 /* Font.swift in Sources */,
+				8360E1F121B08DC8003BBA69 /* Dictionary+Mapping.swift in Sources */,
 				83ABD3D321A1B23800FBF944 /* AsteroidRepository.swift in Sources */,
 				83ABD3D521A1B24500FBF944 /* AsteroidDatabaseRepository.swift in Sources */,
 				83ABD35E21A07B0100FBF944 /* SettingsPresenter.swift in Sources */,

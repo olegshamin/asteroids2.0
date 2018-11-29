@@ -17,18 +17,26 @@ final class AsteroidServiceAssemblyImpl: ServiceAssembly, AsteroidServiceAssembl
     // MARK: AsteroidServiceAssembly
 
     func service() -> AsteroidService {
-        return AsteroidServiceImpl(scheduler: self.scheduler(),
-                                   networkRepository: self.networkRepository(),
-                                   databaseRepository: self.databaseRepository())
+        return AsteroidServiceImpl(scheduler: scheduler(),
+                                   networkRepository: networkRepository(),
+                                   databaseRepository: databaseRepository())
     }
 
     // MARK: Repositories
 
     private func networkRepository() -> AsteroidRepository {
-        return AsteroidNetworkRepository(transport: self.transport())
+        return AsteroidNetworkRepository(transport: transport(),
+                                         deserializer: deserializer(),
+                                         networkMapper: networkMapper())
     }
 
     private func databaseRepository() -> AsteroidRepository {
         return AsteroidDatabaseRepository()
+    }
+
+    // MARK: Mapper
+
+    private func networkMapper() -> AsteroidNetworkMapper {
+        return AsteroidNetworkMapperImpl()
     }
 }
