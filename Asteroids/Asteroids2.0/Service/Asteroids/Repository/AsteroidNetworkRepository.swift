@@ -56,11 +56,6 @@ final class AsteroidNetworkRepository: AsteroidRepository, NetworkRepository {
         ) throws -> [Asteroid] {
         var result: [Asteroid] = []
         let responseDictionary = try deserializer.deserialize(data: data)
-//        let categoryDictionaries: [ModelDictionary] = try responseDictionary.mapField(withKey: ServerField.items)
-//        let communicationCategories = try categoryDictionaries.map(communicationCategoryNetworkMapper.map)
-//        let paginationInfoDictionary: ModelDictionary = try responseDictionary.mapField(withKey: ServerField._meta)
-//        let paginationInfo = try paginationInfoNetworkMapper.map(paginationInfoDictionary)
-//        return ECOPaginatedResponse(response: communicationCategories, paginationInfo: paginationInfo)
         let daysDictionary: ModelDictionary = try responseDictionary.mapField(withKey: ServerField.near_earth_objects)
 
         for (_, asteroids) in daysDictionary {

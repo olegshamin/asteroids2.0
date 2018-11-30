@@ -33,8 +33,11 @@ final class AsteroidServiceImpl: AsteroidService {
     func asteroids(with request: AsteroidsRequest,
                    completion: @escaping AsteroidsResultHandler) {
         self.scheduler.doInBg { [weak self] in
-            self?.networkRepository.asteroids(with: request, completion: { result in
-                print("")
+            guard let self = self else {
+                return
+            }
+            self.networkRepository.asteroids(with: request, completion: { result in
+                self.handle(result: result, scheduler: self.scheduler, completion: completion)
             })
         }
     }
