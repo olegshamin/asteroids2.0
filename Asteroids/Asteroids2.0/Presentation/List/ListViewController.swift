@@ -8,7 +8,10 @@
 
 import UIKit
 
-protocol ListDisplayLogic: class {}
+protocol ListDisplayLogic: class {
+    func displayAsteroidsSuccess(viewModel: List.Asteroids.ViewModel.Success)
+    func displayAsteroidsFailure(viewModel: List.Asteroids.ViewModel.Failure)
+}
 
 final class ListViewController: ViewController {
 
@@ -16,8 +19,11 @@ final class ListViewController: ViewController {
 
     var interactor: ListBusinessLogic?
     var router: (ListRoutingLogic & ListDataPassing)?
+    private var asteroids: [AsteroidViewModel] = []
 
     // MARK: IBOutlets
+
+    @IBOutlet var tableView: UITableView!
 
     // MARK: Assembly
 
@@ -33,6 +39,15 @@ final class ListViewController: ViewController {
         fetchAsteroids()
     }
 
+    // MARK: Private helpers
+
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        tableView.register(AsteroidCell.self)
+    }
+
     // MARK: Data
 
     private func fetchAsteroids() {
@@ -41,4 +56,29 @@ final class ListViewController: ViewController {
     }
 }
 
-extension ListViewController: ListDisplayLogic {}
+extension ListViewController: ListDisplayLogic {
+
+    func displayAsteroidsSuccess(viewModel: List.Asteroids.ViewModel.Success) {
+        asteroids = viewModel.asteroidsViewModel
+        tableView.reloadData()
+    }
+
+    func displayAsteroidsFailure(viewModel: List.Asteroids.ViewModel.Failure) {
+        display(errorViewModel: viewModel.errorViewModel)
+    }
+}
+
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return asteroids.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: AsteroidCell = tableView.dequeue(for: indexPath)
+
+        cell.setup(with: asteroids[indexPath.row])
+
+        return cell
+    }
+}

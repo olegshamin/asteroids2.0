@@ -12,8 +12,12 @@ enum List {
     enum Asteroids {
         struct Request {}
         struct Response {
-            var asteroids: [Asteroid]?
-            let error: Error?
+            struct Success {
+                var asteroids: [Asteroid]
+            }
+            struct Failure {
+                let error: Error
+            }
         }
         struct ViewModel {
             struct Success {

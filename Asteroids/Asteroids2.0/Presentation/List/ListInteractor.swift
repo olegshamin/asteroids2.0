@@ -36,9 +36,30 @@ final class ListInteractor: ListBusinessLogic, ListDataStore {
     // MARK: ListBusinessLogic
 
     func asteroids(request: List.Asteroids.Request) {
+
+        presenter.presentLoading()
+
         let request = AsteroidsRequest(startDate: Date(), endDate: Date())
         asteroidService.asteroids(with: request) { [weak self] result in
-            print("")
+            self?.handle(asteroidsResult: result)
+        }
+    }
+
+    // MARK: Private handlers
+
+    private func handle(
+        asteroidsResult result: AsteroidsResult
+        ) {
+
+        presenter.presentContent()
+
+        switch result {
+        case .success(let asteroids):
+            let response = List.Asteroids.Response.Success(asteroids: asteroids)
+            presenter.presentAsteroidsSuccess(response: response)
+        case .failure(let error):
+            let response = List.Asteroids.Response.Failure(error: error)
+            presenter.presentAsteroidsFailure(response: response)
         }
     }
 }

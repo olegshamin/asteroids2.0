@@ -8,7 +8,10 @@
 
 import UIKit
 
-protocol ListPresentationLogic: AsyncPresentationLogic {}
+protocol ListPresentationLogic: AsyncPresentationLogic {
+    func presentAsteroidsSuccess(response: List.Asteroids.Response.Success)
+    func presentAsteroidsFailure(response: List.Asteroids.Response.Failure)
+}
 
 final class ListPresenter: ListPresentationLogic, AsyncPresentationLogicInternal {
 
@@ -27,4 +30,22 @@ final class ListPresenter: ListPresentationLogic, AsyncPresentationLogicInternal
     }
 
     // MARK: ListPresentationLogic
+
+    func presentAsteroidsSuccess(response: List.Asteroids.Response.Success) {
+        var asteroids: [AsteroidViewModel] = []
+
+        for asteroid in response.asteroids {
+            let viewModel = AsteroidViewModel(asteroid: asteroid)
+            asteroids.append(viewModel)
+        }
+
+        let viewModel = List.Asteroids.ViewModel.Success(asteroidsViewModel: asteroids)
+        viewController?.displayAsteroidsSuccess(viewModel: viewModel)
+    }
+
+    func presentAsteroidsFailure(response: List.Asteroids.Response.Failure) {
+        let errorViewModel = ErrorViewModel(error: response.error)
+        let viewModel = List.Asteroids.ViewModel.Failure(errorViewModel: errorViewModel)
+        viewController?.displayAsteroidsFailure(viewModel: viewModel)
+    }
 }

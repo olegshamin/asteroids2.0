@@ -14,6 +14,8 @@
 		8360E1F321B08DF2003BBA69 /* MapperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1F221B08DF2003BBA69 /* MapperError.swift */; };
 		8360E1F621B0965D003BBA69 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1F521B0965D003BBA69 /* Mapper.swift */; };
 		8360E1F921B096DA003BBA69 /* AsteroidNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1F821B096DA003BBA69 /* AsteroidNetworkMapper.swift */; };
+		8360E1FD21B1ECB3003BBA69 /* AsteroidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E1FB21B1ECB3003BBA69 /* AsteroidCell.swift */; };
+		8360E1FE21B1ECB3003BBA69 /* AsteroidCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8360E1FC21B1ECB3003BBA69 /* AsteroidCell.xib */; };
 		8395BF5A219F7CE500310ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF59219F7CE500310ED1 /* AppDelegate.swift */; };
 		8395BF61219F7CE700310ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8395BF60219F7CE700310ED1 /* Assets.xcassets */; };
 		8395BF6F219F7CE800310ED1 /* Asteroids2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF6E219F7CE800310ED1 /* Asteroids2_0Tests.swift */; };
@@ -138,6 +140,8 @@
 		8360E1F221B08DF2003BBA69 /* MapperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperError.swift; sourceTree = "<group>"; };
 		8360E1F521B0965D003BBA69 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		8360E1F821B096DA003BBA69 /* AsteroidNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidNetworkMapper.swift; sourceTree = "<group>"; };
+		8360E1FB21B1ECB3003BBA69 /* AsteroidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidCell.swift; sourceTree = "<group>"; };
+		8360E1FC21B1ECB3003BBA69 /* AsteroidCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AsteroidCell.xib; sourceTree = "<group>"; };
 		8395BF56219F7CE500310ED1 /* Asteroids2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8395BF59219F7CE500310ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8395BF60219F7CE700310ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -287,6 +291,15 @@
 				8360E1F821B096DA003BBA69 /* AsteroidNetworkMapper.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		8360E1FA21B1EC94003BBA69 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8360E1FB21B1ECB3003BBA69 /* AsteroidCell.swift */,
+				8360E1FC21B1ECB3003BBA69 /* AsteroidCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8395BF4D219F7CE500310ED1 = {
@@ -468,6 +481,7 @@
 		83ABD31B21A06D4800FBF944 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				8360E1FA21B1EC94003BBA69 /* Cell */,
 				83ABD32A21A06E8D00FBF944 /* List.swift */,
 				83ABD32C21A06ED000FBF944 /* ListAssembly.swift */,
 				83ABD34221A0713C00FBF944 /* ListInteractor.swift */,
@@ -943,6 +957,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83ABD31A21A03E4B00FBF944 /* LaunchScreen.storyboard in Resources */,
+				8360E1FE21B1ECB3003BBA69 /* AsteroidCell.xib in Resources */,
 				8395BF61219F7CE700310ED1 /* Assets.xcassets in Resources */,
 				83ABD31421A03C7C00FBF944 /* MainTabBarViewController.storyboard in Resources */,
 				83ABD35321A07A2F00FBF944 /* SearchViewController.storyboard in Resources */,
@@ -1099,6 +1114,7 @@
 				83ABD31121A03ABA00FBF944 /* UIView+AutoLayout.swift in Sources */,
 				83ABD35121A07A2F00FBF944 /* SearchAssembly.swift in Sources */,
 				83D2FC5321ADD31500B35FAD /* Serializer.swift in Sources */,
+				8360E1FD21B1ECB3003BBA69 /* AsteroidCell.swift in Sources */,
 				83ABD39721A09A0E00FBF944 /* Repository.swift in Sources */,
 				83ABD30D21A0386B00FBF944 /* Assembly.swift in Sources */,
 				83ABD3BA21A1752400FBF944 /* LocalStoreServiceAssembly.swift in Sources */,
