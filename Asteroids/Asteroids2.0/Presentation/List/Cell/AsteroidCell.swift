@@ -12,8 +12,13 @@ class AsteroidCell: UITableViewCell, NibLoadable {
 
     // MARK: IBOutlets
 
+    @IBOutlet var labelName: UILabel!
+    @IBOutlet var labelDistance: UILabel!
+
     // MARK: Internal helpers
 
     func setup(with asteroid: AsteroidViewModel) {
+        labelName.text = asteroid.name
+        labelDistance.text = asteroid.distance
     }
 }

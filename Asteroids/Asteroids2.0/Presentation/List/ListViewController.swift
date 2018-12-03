@@ -19,7 +19,8 @@ final class ListViewController: ViewController {
 
     var interactor: ListBusinessLogic?
     var router: (ListRoutingLogic & ListDataPassing)?
-    private var asteroids: [AsteroidViewModel] = []
+    private var displayedAsteroids: [DisplayedAsteroids] = []
+    private let  tableFooterSpinnerView = SpinnerView.fromNib()
 
     // MARK: IBOutlets
 
@@ -37,6 +38,7 @@ final class ListViewController: ViewController {
         super.viewDidLoad()
 
         fetchAsteroids()
+        setupTableView()
     }
 
     // MARK: Private helpers
@@ -46,11 +48,13 @@ final class ListViewController: ViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.register(AsteroidCell.self)
+        tableView.tableFooterView = tableFooterSpinnerView
     }
 
     // MARK: Data
 
     private func fetchAsteroids() {
+        tableFooterSpinnerView.spinner.startAnimating()
         let request = List.Asteroids.Request()
         interactor?.asteroids(request: request)
     }
@@ -59,26 +63,52 @@ final class ListViewController: ViewController {
 extension ListViewController: ListDisplayLogic {
 
     func displayAsteroidsSuccess(viewModel: List.Asteroids.ViewModel.Success) {
-        asteroids = viewModel.asteroidsViewModel
+        displayedAsteroids = viewModel.displayedAsteroids
         tableView.reloadData()
+        tableFooterSpinnerView.spinner.stopAnimating()
     }
 
     func displayAsteroidsFailure(viewModel: List.Asteroids.ViewModel.Failure) {
         display(errorViewModel: viewModel.errorViewModel)
+        tableFooterSpinnerView.spinner.stopAnimating()
     }
 }
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return displayedAsteroids.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return asteroids.count
+        let section = displayedAsteroids[section]
+        return section.asteroids.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: AsteroidCell = tableView.dequeue(for: indexPath)
 
-        cell.setup(with: asteroids[indexPath.row])
+        let section = displayedAsteroids[indexPath.section]
+        cell.setup(with: section.asteroids[indexPath.row])
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        let cellsCountBeforeEnd = 1
+        let isLastSection = (section == displayedAsteroids.count - 1)
+        let isListAboutToEnd =
+            (isLastSection) &&
+            (row == displayedAsteroids[section].asteroids.count - cellsCountBeforeEnd )
+        if isListAboutToEnd {
+            fetchAsteroids()
+        }
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = displayedAsteroids[section]
+        return section.title
     }
 }

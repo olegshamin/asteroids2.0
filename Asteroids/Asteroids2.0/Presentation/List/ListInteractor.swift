@@ -20,6 +20,7 @@ final class ListInteractor: ListBusinessLogic, ListDataStore {
 
     private let presenter: ListPresentationLogic
     private let asteroidService: AsteroidService
+    private var currentDate = Date()
 
     // MARK: ListDataStore
 
@@ -37,9 +38,8 @@ final class ListInteractor: ListBusinessLogic, ListDataStore {
 
     func asteroids(request: List.Asteroids.Request) {
 
-        presenter.presentLoading()
+        let request = AsteroidsRequest(startDate: currentDate, endDate: currentDate.adding(-7))
 
-        let request = AsteroidsRequest(startDate: Date(), endDate: Date())
         asteroidService.asteroids(with: request) { [weak self] result in
             self?.handle(asteroidsResult: result)
         }
@@ -51,11 +51,14 @@ final class ListInteractor: ListBusinessLogic, ListDataStore {
         asteroidsResult result: AsteroidsResult
         ) {
 
-        presenter.presentContent()
-
         switch result {
         case .success(let asteroids):
-            let response = List.Asteroids.Response.Success(asteroids: asteroids)
+
+            var sortedAsteroids = asteroids
+            sortedAsteroids.sort(by: { $0.date > $1.date })
+
+            let response = List.Asteroids.Response.Success(asteroids: sortedAsteroids)
+            currentDate = currentDate.adding(-8)
             presenter.presentAsteroidsSuccess(response: response)
         case .failure(let error):
             let response = List.Asteroids.Response.Failure(error: error)

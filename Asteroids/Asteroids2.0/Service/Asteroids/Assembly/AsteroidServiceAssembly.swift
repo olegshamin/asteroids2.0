@@ -27,7 +27,8 @@ final class AsteroidServiceAssemblyImpl: ServiceAssembly, AsteroidServiceAssembl
     private func networkRepository() -> AsteroidRepository {
         return AsteroidNetworkRepository(transport: transport(),
                                          deserializer: deserializer(),
-                                         networkMapper: networkMapper())
+                                         networkMapper: networkMapper(),
+                                         requestErrorNetworkMapper: requestErrorNetworkMapper())
     }
 
     private func databaseRepository() -> AsteroidRepository {

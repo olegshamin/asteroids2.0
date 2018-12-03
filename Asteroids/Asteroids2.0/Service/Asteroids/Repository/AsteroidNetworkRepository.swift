@@ -13,7 +13,8 @@ final class AsteroidNetworkRepository: AsteroidRepository, NetworkRepository {
     // MARK: NetworkRepository
 
     let transport: Transport
-    private let deserializer: Deserializer
+    let deserializer: Deserializer
+    let requestErrorNetworkMapper: RequestErrorNetworkMapper
     private let networkMapper: AsteroidNetworkMapper
 
     // MARK: Initialization
@@ -21,11 +22,13 @@ final class AsteroidNetworkRepository: AsteroidRepository, NetworkRepository {
     init(
         transport: Transport,
         deserializer: Deserializer,
-        networkMapper: AsteroidNetworkMapper
+        networkMapper: AsteroidNetworkMapper,
+        requestErrorNetworkMapper: RequestErrorNetworkMapper
         ) {
         self.transport = transport
         self.deserializer = deserializer
         self.networkMapper = networkMapper
+        self.requestErrorNetworkMapper = requestErrorNetworkMapper
     }
 
     // MARK: AsteroidRepository

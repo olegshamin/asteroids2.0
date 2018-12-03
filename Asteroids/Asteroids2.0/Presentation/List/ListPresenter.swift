@@ -32,14 +32,26 @@ final class ListPresenter: ListPresentationLogic, AsyncPresentationLogicInternal
     // MARK: ListPresentationLogic
 
     func presentAsteroidsSuccess(response: List.Asteroids.Response.Success) {
-        var asteroids: [AsteroidViewModel] = []
+        var displayedAsteroids: [DisplayedAsteroids] = []
 
         for asteroid in response.asteroids {
-            let viewModel = AsteroidViewModel(asteroid: asteroid)
-            asteroids.append(viewModel)
+
+            let sectionTitle = asteroid.date.convertToDisplayString()
+            if let foundIndex = displayedAsteroids.index(where: {
+                return ($0.title == sectionTitle)
+            }) {
+                let asteroid = AsteroidViewModel(asteroid: asteroid)
+                displayedAsteroids[foundIndex].asteroids.append(asteroid)
+            } else {
+                var section = DisplayedAsteroids(with: sectionTitle)
+                let asteroid = AsteroidViewModel(asteroid: asteroid)
+                section.asteroids.append(asteroid)
+                displayedAsteroids.append(section)
+            }
+
         }
 
-        let viewModel = List.Asteroids.ViewModel.Success(asteroidsViewModel: asteroids)
+        let viewModel = List.Asteroids.ViewModel.Success(displayedAsteroids: displayedAsteroids)
         viewController?.displayAsteroidsSuccess(viewModel: viewModel)
     }
 

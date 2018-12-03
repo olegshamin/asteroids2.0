@@ -21,7 +21,7 @@ enum List {
         }
         struct ViewModel {
             struct Success {
-                let asteroidsViewModel: [AsteroidViewModel]
+                var displayedAsteroids: [DisplayedAsteroids]
             }
             struct Failure {
                 let errorViewModel: ErrorViewModel

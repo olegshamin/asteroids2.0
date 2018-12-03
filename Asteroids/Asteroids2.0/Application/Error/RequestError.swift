@@ -10,23 +10,21 @@ import Foundation
 
 struct RequestError: Error, LocalizedError {
 
-    // MARK: Private properties
+    // MARK: Properties
 
-    private let message: String?
-    private let code: Int
+    var message: String
+    var code: String
 
-    // MARK: Initialization
+    // MARK: Initializers
 
-    init(
-        error: NSError
-        ) {
+    public init(error: NSError) {
         message = error.description
-        code    = error.code
+        code    = "\(error.code)"
     }
 
-    init(
-        message: String?,
-        code: Int
+    public init(
+        message: String,
+        code: String
         ) {
         self.message = message
         self.code = code
@@ -34,25 +32,7 @@ struct RequestError: Error, LocalizedError {
 
     // MARK: LocalizedError
 
-    var errorDescription: String? {
+    public var errorDescription: String? {
         return message
-    }
-}
-
-// MARK: - Decodable
-
-extension RequestError: Decodable {
-
-    enum DecodeKeys: String, CodingKey {
-        case message = "error_message"
-        case code = "code"
-    }
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: DecodeKeys.self)
-        let message: String = try container.decode(String.self, forKey: .message)
-        let code: Int = try container.decode(Int.self, forKey: .code)
-        self.init(message: message,
-                  code: code)
     }
 }
