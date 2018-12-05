@@ -46,7 +46,6 @@ final class ListViewController: ViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.tableFooterView = UIView()
         tableView.register(AsteroidCell.self)
         tableView.tableFooterView = tableFooterSpinnerView
     }
@@ -63,7 +62,7 @@ final class ListViewController: ViewController {
 extension ListViewController: ListDisplayLogic {
 
     func displayAsteroidsSuccess(viewModel: List.Asteroids.ViewModel.Success) {
-        displayedAsteroids = viewModel.displayedAsteroids
+        displayedAsteroids += viewModel.displayedAsteroids
         tableView.reloadData()
         tableFooterSpinnerView.spinner.stopAnimating()
     }

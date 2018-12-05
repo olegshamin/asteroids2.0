@@ -32,12 +32,16 @@ final class AsteroidServiceAssemblyImpl: ServiceAssembly, AsteroidServiceAssembl
     }
 
     private func databaseRepository() -> AsteroidRepository {
-        return AsteroidDatabaseRepository()
+        return AsteroidDatabaseRepository(asteroidDatabaseMapper: databasekMapper())
     }
 
     // MARK: Mapper
 
     private func networkMapper() -> AsteroidNetworkMapper {
         return AsteroidNetworkMapperImpl()
+    }
+
+    private func databasekMapper() -> AsteroidDatabaseMapper {
+        return AsteroidDatabaseMapperImpl()
     }
 }

@@ -22,6 +22,7 @@
 		8360E20721B5D35B003BBA69 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E20621B5D35B003BBA69 /* ErrorCode.swift */; };
 		8360E20921B5D5C6003BBA69 /* RequestErrorNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E20821B5D5C6003BBA69 /* RequestErrorNetworkMapper.swift */; };
 		8360E20B21B5DB2B003BBA69 /* DisplayedAsteroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E20A21B5DB2B003BBA69 /* DisplayedAsteroids.swift */; };
+		8360E20D21B875AB003BBA69 /* AsteroidDatabaseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360E20C21B875AB003BBA69 /* AsteroidDatabaseMapper.swift */; };
 		8395BF5A219F7CE500310ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF59219F7CE500310ED1 /* AppDelegate.swift */; };
 		8395BF61219F7CE700310ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8395BF60219F7CE700310ED1 /* Assets.xcassets */; };
 		8395BF6F219F7CE800310ED1 /* Asteroids2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395BF6E219F7CE800310ED1 /* Asteroids2_0Tests.swift */; };
@@ -154,6 +155,7 @@
 		8360E20621B5D35B003BBA69 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		8360E20821B5D5C6003BBA69 /* RequestErrorNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestErrorNetworkMapper.swift; sourceTree = "<group>"; };
 		8360E20A21B5DB2B003BBA69 /* DisplayedAsteroids.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedAsteroids.swift; sourceTree = "<group>"; };
+		8360E20C21B875AB003BBA69 /* AsteroidDatabaseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidDatabaseMapper.swift; sourceTree = "<group>"; };
 		8395BF56219F7CE500310ED1 /* Asteroids2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8395BF59219F7CE500310ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8395BF60219F7CE700310ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		8360E1F721B096B2003BBA69 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				8360E20C21B875AB003BBA69 /* AsteroidDatabaseMapper.swift */,
 				8360E1F821B096DA003BBA69 /* AsteroidNetworkMapper.swift */,
 			);
 			path = Mapper;
@@ -1195,6 +1198,7 @@
 				83ABD36C21A07E0000FBF944 /* String+WhiteSpace.swift in Sources */,
 				83D2FC5B21ADEC2200B35FAD /* RealmOrbitClass.swift in Sources */,
 				83D2FC5121ADD2E800B35FAD /* DeserializerError.swift in Sources */,
+				8360E20D21B875AB003BBA69 /* AsteroidDatabaseMapper.swift in Sources */,
 				83ABD39921A09AA300FBF944 /* NetworkRepository.swift in Sources */,
 				83ABD36A21A07DBD00FBF944 /* ErrorViewModel.swift in Sources */,
 				83ABD32D21A06ED000FBF944 /* ListAssembly.swift in Sources */,
