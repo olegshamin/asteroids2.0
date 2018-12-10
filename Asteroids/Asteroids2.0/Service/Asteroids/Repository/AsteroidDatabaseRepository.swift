@@ -29,9 +29,21 @@ final class AsteroidDatabaseRepository: AsteroidRepository, DatabaseRepository {
 
     func asteroids(with request: AsteroidsRequest,
                    completion: @escaping AsteroidsResultHandler) {
+        let result = Result { () -> [Asteroid] in
+            let filter = NSPredicate(format: "timeInterval <= %lf AND timeInterval >= %lf",
+                                     request.startTimeInterval,
+                                     request.endTimeInterval)
+            return try fetch(filter: filter).map({ try asteroidDatabaseMapper.map($0) })
+        }
+        completion(result)
     }
 
-    func create(_ asteroids: Asteroid,
+    func create(_ asteroids: [Asteroid],
                 completion: @escaping VoidResultHandler) {
+        let result = Result {
+            let databaseModels = try asteroids.map(asteroidDatabaseMapper.map)
+            try createOrUpdate(databaseModels: databaseModels)
+        }
+        completion(result)
     }
 }

@@ -15,6 +15,7 @@ struct Asteroid {
     let id: String
     let name: String
     let date: Date
+    let timeInterval: Double
     let diameterKmMin: Double
     let diameterKmMax: Double
     let diameterMMin: Double
@@ -60,6 +61,7 @@ struct Asteroid {
         self.id = id
         self.name = name
         self.date = date
+        self.timeInterval = date.timeIntervalSince1970
         self.diameterKmMin = diameterKmMin
         self.diameterKmMax = diameterKmMax
         self.diameterMMin = diameterMMin

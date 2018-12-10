@@ -37,8 +37,28 @@ final class AsteroidServiceImpl: AsteroidService {
                 return
             }
             self.networkRepository.asteroids(with: request, completion: { result in
-                self.handle(result: result, scheduler: self.scheduler, completion: completion)
+                self.handle(asteroidsNetworkResult: result, request: request, completion: completion)
             })
+        }
+    }
+
+    // MARK: Private handlers
+
+    private func handle(asteroidsNetworkResult result: AsteroidsResult,
+                        request: AsteroidsRequest,
+                        completion: @escaping AsteroidsResultHandler) {
+        switch result {
+        case .success(let asteroids):
+
+            databaseRepository.create(asteroids) { _ in }
+            handle(result: result, scheduler: scheduler, completion: completion)
+
+        case .failure(let error):
+            handle(networkError: error, scheduler: scheduler, completion: completion) {
+                databaseRepository.asteroids(with: request, completion: { [weak self] result in
+                    print("")
+                })
+            }
         }
     }
 }

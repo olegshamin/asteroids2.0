@@ -40,7 +40,7 @@ final class AsteroidNetworkRepository: AsteroidRepository, NetworkRepository {
         }
     }
 
-    func create(_ asteroids: Asteroid,
+    func create(_ asteroids: [Asteroid],
                 completion: @escaping VoidResultHandler) {
         assertionFailure("Not implemented")
     }

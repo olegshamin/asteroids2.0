@@ -62,13 +62,11 @@ extension DatabaseRepository where DatabaseModel: Object {
         let realm = try Realm()
         return Array(realm.objects(DatabaseModel.self))
     }
-//    func fetchAll(
-//        for week: Week
-//        ) throws -> [DatabaseModel] {
-//        return try Realm()
-//            .objects(DatabaseModel.self)
-//            .filter("startDate >= %@ AND endDate <= %@", week.startDate, week.endDate)
-//    }
+
+    func fetch(filter: NSPredicate) throws -> [DatabaseModel] {
+        let realm = try Realm()
+        return realm.objects(DatabaseModel.self).filter(filter).map({ $0 })
+    }
 
     func fetch(for primaryKey: PrimaryKey) throws -> DatabaseModel {
         let realm = try Realm()

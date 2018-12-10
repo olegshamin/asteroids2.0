@@ -14,6 +14,8 @@ struct AsteroidsRequest: Request {
 
     let startDate: String
     let endDate: String
+    let startTimeInterval: Double
+    let endTimeInterval: Double
 
     // MARK: Initialization
 
@@ -23,6 +25,8 @@ struct AsteroidsRequest: Request {
         ) {
         self.startDate = startDate.convertToRequest()
         self.endDate = endDate.convertToRequest()
+        self.startTimeInterval = startDate.timeIntervalSince1970
+        self.endTimeInterval = endDate.timeIntervalSince1970
     }
 
     // MARK: Request

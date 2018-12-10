@@ -10,5 +10,5 @@ import Foundation
 
 protocol AsteroidRepository {
     func asteroids(with request: AsteroidsRequest, completion: @escaping AsteroidsResultHandler)
-    func create(_ asteroids: Asteroid, completion: @escaping VoidResultHandler)
+    func create(_ asteroids: [Asteroid], completion: @escaping VoidResultHandler)
 }
