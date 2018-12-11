@@ -44,9 +44,11 @@ final class AsteroidServiceImpl: AsteroidService {
 
     // MARK: Private handlers
 
-    private func handle(asteroidsNetworkResult result: AsteroidsResult,
-                        request: AsteroidsRequest,
-                        completion: @escaping AsteroidsResultHandler) {
+    private func handle(
+        asteroidsNetworkResult result: AsteroidsResult,
+        request: AsteroidsRequest,
+        completion: @escaping AsteroidsResultHandler
+        ) {
         switch result {
         case .success(let asteroids):
 
@@ -56,9 +58,22 @@ final class AsteroidServiceImpl: AsteroidService {
         case .failure(let error):
             handle(networkError: error, scheduler: scheduler, completion: completion) {
                 databaseRepository.asteroids(with: request, completion: { [weak self] result in
-                    print("")
+                    self?.handle(asteroidsDatabaseResult: result, networkError: error, completion: completion)
                 })
             }
         }
+    }
+
+    private func handle(
+        asteroidsDatabaseResult result: AsteroidsResult,
+        networkError: Error,
+        completion: @escaping AsteroidsResultHandler
+        ) {
+        // TODO: Log database error
+        guard case .success = result else {
+            handle(error: networkError, scheduler: scheduler, completion: completion)
+            return
+        }
+        handle(result: result, scheduler: scheduler, completion: completion)
     }
 }

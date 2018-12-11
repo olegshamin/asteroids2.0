@@ -62,8 +62,10 @@ final class ListViewController: ViewController {
 extension ListViewController: ListDisplayLogic {
 
     func displayAsteroidsSuccess(viewModel: List.Asteroids.ViewModel.Success) {
-        displayedAsteroids += viewModel.displayedAsteroids
-        tableView.reloadData()
+        if viewModel.displayedAsteroids.count > 0 {
+            displayedAsteroids += viewModel.displayedAsteroids
+            tableView.reloadData()
+        }
         tableFooterSpinnerView.spinner.stopAnimating()
     }
 
@@ -93,18 +95,18 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        let section = indexPath.section
-//        let row = indexPath.row
-//        let cellsCountBeforeEnd = 1
-//        let isLastSection = (section == displayedAsteroids.count - 1)
-//        let isListAboutToEnd =
-//            (isLastSection) &&
-//            (row == displayedAsteroids[section].asteroids.count - cellsCountBeforeEnd )
-//        if isListAboutToEnd {
-//            fetchAsteroids()
-//        }
-//    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        let cellsCountBeforeEnd = 1
+        let isLastSection = (section == displayedAsteroids.count - 1)
+        let isListAboutToEnd =
+            (isLastSection) &&
+            (row == displayedAsteroids[section].asteroids.count - cellsCountBeforeEnd )
+        if isListAboutToEnd {
+            fetchAsteroids()
+        }
+    }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let section = displayedAsteroids[section]
