@@ -13,44 +13,71 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="KGk-i7-Jjw" customClass="AsteroidCell" customModule="Asteroids2_0" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="245" id="KGk-i7-Jjw" customClass="AsteroidCell" customModule="Asteroids2_0" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="245"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="78.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="244.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4b3-vV-geo">
-                        <rect key="frame" x="16" y="11" width="288" height="57"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szZ-3t-xAj">
+                        <rect key="frame" x="26" y="21" width="268" height="203"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYz-8P-XRa">
-                                <rect key="frame" x="0.0" y="0.0" width="288" height="28.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRu-2n-g0k">
-                                <rect key="frame" x="0.0" y="36.5" width="288" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="crp-ae-0Xc">
+                                <rect key="frame" x="16" y="16" width="236" height="171"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcG-zU-i01">
+                                        <rect key="frame" x="0.0" y="0.0" width="236" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-OT-KUi">
+                                        <rect key="frame" x="0.0" y="28.5" width="236" height="85.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiS-iT-N6B">
+                                        <rect key="frame" x="0.0" y="122" width="236" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZF-he-pBm">
+                                        <rect key="frame" x="0.0" y="150.5" width="236" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                    </stackView>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="crp-ae-0Xc" secondAttribute="trailing" constant="8" id="R8a-MS-425"/>
+                            <constraint firstItem="crp-ae-0Xc" firstAttribute="leading" secondItem="szZ-3t-xAj" secondAttribute="leadingMargin" constant="8" id="Z1w-YU-16l"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="crp-ae-0Xc" secondAttribute="bottom" constant="8" id="lFp-9E-WxN"/>
+                            <constraint firstItem="crp-ae-0Xc" firstAttribute="top" secondItem="szZ-3t-xAj" secondAttribute="topMargin" constant="8" id="zsq-U2-2Go"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="4b3-vV-geo" secondAttribute="bottom" id="CRN-Zx-GPN"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="4b3-vV-geo" secondAttribute="trailing" id="jzs-og-MTw"/>
-                    <constraint firstItem="4b3-vV-geo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="pUD-mP-V9a"/>
-                    <constraint firstItem="4b3-vV-geo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="sDh-DI-Tva"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="szZ-3t-xAj" secondAttribute="trailing" constant="10" id="2QN-EV-KcN"/>
+                    <constraint firstItem="szZ-3t-xAj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Hyl-c1-EEo"/>
+                    <constraint firstItem="szZ-3t-xAj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="fyt-Ww-s2l"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="szZ-3t-xAj" secondAttribute="bottom" constant="10" id="tJv-aS-t3f"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="labelDistance" destination="rRu-2n-g0k" id="b5u-DV-m8U"/>
-                <outlet property="labelName" destination="CYz-8P-XRa" id="bBH-Qn-BXD"/>
+                <outlet property="backView" destination="szZ-3t-xAj" id="dKv-wW-VoK"/>
+                <outlet property="labelDiameter" destination="fcG-zU-i01" id="mnb-A0-Z2g"/>
+                <outlet property="labelDistance" destination="ZiS-iT-N6B" id="42a-uA-Avs"/>
+                <outlet property="labelName" destination="vNe-OT-KUi" id="aGy-rt-Iaa"/>
+                <outlet property="labelVelocity" destination="SZF-he-pBm" id="CVD-0q-JZN"/>
             </connections>
-            <point key="canvasLocation" x="137.59999999999999" y="169.56521739130437"/>
+            <point key="canvasLocation" x="137.59999999999999" y="244.22788605697153"/>
         </tableViewCell>
     </objects>
 </document>

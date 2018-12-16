@@ -11,7 +11,13 @@ import Foundation
 extension Date {
     func convertToDisplayString() -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateStyle = .full
+
+        let calendar = Calendar.current
+        if calendar.isDateInToday(self) {
+            return NSLocalizedString("Today", comment: "")
+        }
+
         return formatter.string(from: self)
     }
 }

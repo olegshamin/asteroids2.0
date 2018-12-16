@@ -108,8 +108,21 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let section = displayedAsteroids[section]
-        return section.title
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 50))
+        headerView.backgroundColor = .white
+
+        let titleLabel = UILabel()
+        headerView.addSubview(titleLabel)
+
+        titleLabel.align(to: .zero, of: headerView)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.text = displayedAsteroids[section].title
+
+        return headerView
     }
 }
