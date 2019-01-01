@@ -16,6 +16,7 @@ struct AsteroidViewModel {
     var diameter: String = ""
     var distance: String = ""
     var velocity: String = ""
+    var isItDangerous: Bool = false
     private let formatter = NumberFormatter()
 
     // MARK: Initialization
@@ -29,6 +30,7 @@ struct AsteroidViewModel {
         self.diameter = getDiameter(from: asteroid)
         self.distance = getDistance(from: asteroid)
         self.velocity = getVelocity(from: asteroid)
+        self.isItDangerous = asteroid.isItDangerous
     }
 
     // MARK: Private helpers

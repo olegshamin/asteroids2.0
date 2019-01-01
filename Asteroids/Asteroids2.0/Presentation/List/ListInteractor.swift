@@ -21,6 +21,7 @@ final class ListInteractor: ListBusinessLogic, ListDataStore {
     private let presenter: ListPresentationLogic
     private let asteroidService: AsteroidService
     private var currentDate = Date()
+    private var isLoading = false
 
     // MARK: ListDataStore
 
@@ -38,7 +39,15 @@ final class ListInteractor: ListBusinessLogic, ListDataStore {
 
     func asteroids(request: List.Asteroids.Request) {
 
-        let request = AsteroidsRequest(startDate: currentDate, endDate: currentDate.adding(-7))
+        guard !isLoading else {
+            return
+        }
+
+        let endDate = currentDate.adding(-7)
+        print("mmmm startDate = \(currentDate); endDate = \(endDate)")
+        let request = AsteroidsRequest(startDate: currentDate, endDate: endDate)
+
+        isLoading = true
 
         asteroidService.asteroids(with: request) { [weak self] result in
             self?.handle(asteroidsResult: result)
@@ -54,6 +63,7 @@ final class ListInteractor: ListBusinessLogic, ListDataStore {
         switch result {
         case .success(let asteroids):
 
+            isLoading = false
             var sortedAsteroids = asteroids
             sortedAsteroids.sort(by: { $0.date > $1.date })
 

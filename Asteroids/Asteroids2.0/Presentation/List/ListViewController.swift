@@ -114,7 +114,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 50))
-        headerView.backgroundColor = .white
+        headerView.backgroundColor = .clear
 
         let titleLabel = UILabel()
         headerView.addSubview(titleLabel)

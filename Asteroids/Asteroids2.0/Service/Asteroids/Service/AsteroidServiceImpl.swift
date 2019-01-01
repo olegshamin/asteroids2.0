@@ -69,7 +69,6 @@ final class AsteroidServiceImpl: AsteroidService {
         networkError: Error,
         completion: @escaping AsteroidsResultHandler
         ) {
-        // TODO: Log database error
         guard case .success = result else {
             handle(error: networkError, scheduler: scheduler, completion: completion)
             return
