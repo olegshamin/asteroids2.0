@@ -76,13 +76,6 @@ extension NetworkRepository {
     // MARK: Error Handlers
 
     private func handleResponseError<T>(data: Data, completion: @escaping ResultHandler<T>) {
-//        do {
-//            let decoder = JSONDecoder()
-//            let requestError = try decoder.decode(RequestError.self, from: data)
-//            handle(error: requestError, completion: completion)
-//        } catch {
-//            handle(error: error, completion: completion)
-//        }
         do {
             let dictionary = try deserializer.deserialize(data: data)
             let requestError = try requestErrorNetworkMapper.map(dictionary)
